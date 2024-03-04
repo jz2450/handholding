@@ -50,18 +50,8 @@ io.sockets.on('connection',
 			// Data comes in as whatever was sent, including objects
 			console.log("Received: 'otherevent' " + data);
 		});
-		
-		// for wk2
-		// When this user emits, client side: socket.emit('otherevent',some data);
-		socket.on('chatmessage', function(data) {
-			// Data comes in as whatever was sent, including objects
-			console.log("Received: 'chatmessage' " + data);
-			
-			// Send it to all of the clients
-			io.emit('chatmessage', data);
-		});
 
-		// for wk3
+		// for HANDHOLDING
 		socket.on('w3mouse', function(data) {
 			// io.emit("mouse", data);
 			// console.log("mouse moved serverside");
