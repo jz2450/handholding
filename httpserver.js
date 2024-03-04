@@ -33,23 +33,23 @@ io.sockets.on('connection',
 		console.log("We have a new client: " + socket.id);
 
 	
-		// When this user "send" from clientside javascript, we get a "message"
-		// client side: socket.send("the message");  or socket.emit('message', "the message");
-		socket.on('message', 
-			// Run this function when a message is sent
-			function (data) {
-				console.log("message: " + data);
+		// // When this user "send" from clientside javascript, we get a "message"
+		// // client side: socket.send("the message");  or socket.emit('message', "the message");
+		// socket.on('message', 
+		// 	// Run this function when a message is sent
+		// 	function (data) {
+		// 		console.log("message: " + data);
 							
-				// To all clients
-				io.sockets.emit('message', data);
-			}
-		);
+		// 		// To all clients
+		// 		io.sockets.emit('message', data);
+		// 	}
+		// );
 		
-		// When this user emits, client side: socket.emit('otherevent',some data);
-		socket.on('otherevent', function(data) {
-			// Data comes in as whatever was sent, including objects
-			console.log("Received: 'otherevent' " + data);
-		});
+		// // When this user emits, client side: socket.emit('otherevent',some data);
+		// socket.on('otherevent', function(data) {
+		// 	// Data comes in as whatever was sent, including objects
+		// 	console.log("Received: 'otherevent' " + data);
+		// });
 
 		// for HANDHOLDING
 		socket.on('w3mouse', function(data) {
